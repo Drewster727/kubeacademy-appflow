@@ -1,5 +1,4 @@
-t add -A
-git commit -m "Update username"pipeline {
+pipeline {
   agent {
     kubernetes {
       yamlFile 'JenkinsPod.yaml'
