@@ -1,4 +1,5 @@
-pipeline {
+t add -A
+git commit -m "Update username"pipeline {
   agent {
     kubernetes {
       yamlFile 'JenkinsPod.yaml'
@@ -6,7 +7,7 @@ pipeline {
   }
   environment {
     DOCKER_IMAGE_NAME = 'website'
-    DOCKER_HUB_ACCOUNT = 'USERNAME'
+    DOCKER_HUB_ACCOUNT = 'drewster727'
   }
   stages {
     stage('Clone Repository') {
