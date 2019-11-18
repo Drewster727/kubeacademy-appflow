@@ -24,15 +24,15 @@ git commit -m "Update username"pipeline {
         }
       }
     }
-    // stage('Validate HTML') {
-    //   steps {
-    //     container('html-proofer') {
-    //       dir ("site") {
-    //           sh ("htmlproofer public --internal-domains ${env.JOB_NAME} --external_only --only-4xx")
-    //       }
-    //     }
-    //   }
-    // }
+    stage('Validate HTML') {
+      steps {
+        container('html-proofer') {
+          dir ("site") {
+              sh ("htmlproofer public --internal-domains ${env.JOB_NAME} --external_only --only-4xx")
+          }
+        }
+      }
+    }
     stage('Docker Build & Push Image') {
       steps {
         container('docker') {
